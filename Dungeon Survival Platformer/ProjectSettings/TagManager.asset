@@ -11,7 +11,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Ground
   - 
   - 
   - 
@@ -38,6 +38,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BackgroundSky
+    uniqueID: 2010547839
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: MainCastleStructure
+    uniqueID: 1603926751
     locked: 0
