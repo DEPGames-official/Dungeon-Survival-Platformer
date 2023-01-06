@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpiderHealth : MonoBehaviour
+public class EnemyHealth : MonoBehaviour
 {
     public float health = 25;
     // Start is called before the first frame update

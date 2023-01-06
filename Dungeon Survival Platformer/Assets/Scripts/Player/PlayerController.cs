@@ -103,7 +103,7 @@ public class PlayerController : MonoBehaviour
 
         foreach( Collider2D enemy in hitSpiders)
         {
-            var spiderHealth = enemy.gameObject.GetComponent<SpiderHealth>();
+            var spiderHealth = enemy.gameObject.GetComponent<EnemyHealth>();
             spiderHealth.health -= 25;
             
 
