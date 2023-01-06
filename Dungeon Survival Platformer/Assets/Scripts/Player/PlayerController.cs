@@ -19,11 +19,23 @@ public class PlayerController : MonoBehaviour
     SpriteRenderer spriteRenderer;
     Animator anim;
     BoxCollider2D coll;
+    Vector3 transformScale;
 
     enum MovementState { idle, running, jumping, falling, attacking}
+    MovementState state;
+
+    [SerializeField]
+    Transform attackPoint;
+    public float attackRange = 0.5f;
+    [SerializeField]
+    LayerMask spiderLayers;
+
+    
 
     private void Start()
     {
+        transformScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z);
+        
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
@@ -46,17 +58,16 @@ public class PlayerController : MonoBehaviour
 
     void UpdateAnimationState()
     {
-        MovementState state;
 
         if (dirX > 0f)
         {
             state = MovementState.running;
-            spriteRenderer.flipX = false;
+            transform.localScale = new Vector3(transformScale.x, transformScale.y, transformScale.z);
         }
         else if (dirX < 0f)
         {
             state = MovementState.running;
-            spriteRenderer.flipX = true;
+            transform.localScale = new Vector3(-transformScale.x, transformScale.y, transformScale.z);
         }
         else
         {
@@ -74,7 +85,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
-            state = MovementState.attacking;
+            Attack();
         }
 
         anim.SetInteger("state", (int)state);
@@ -83,5 +94,19 @@ public class PlayerController : MonoBehaviour
     bool IsGrounded()
     {
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f,jumpableGround);
+    }
+
+    void Attack()
+    {
+        state = MovementState.attacking;
+        Collider2D[] hitSpiders = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, spiderLayers);
+
+        foreach( Collider2D enemy in hitSpiders)
+        {
+            var spiderHealth = enemy.gameObject.GetComponent<SpiderHealth>();
+            spiderHealth.health -= 25;
+            
+
+        }
     }
 }
