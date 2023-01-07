@@ -98,15 +98,19 @@ public class PlayerController : MonoBehaviour
 
     void Attack()
     {
-        state = MovementState.attacking;
-        Collider2D[] hitSpiders = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, spiderLayers);
-
-        foreach( Collider2D enemy in hitSpiders)
+        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
         {
-            var enemyHealth = enemy.gameObject.GetComponent<EnemyHealth>();
-            enemyHealth.health -= 25;
-            
+            state = MovementState.attacking;
+            Collider2D[] hitSpiders = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, spiderLayers);
 
+            foreach (Collider2D enemy in hitSpiders)
+            {
+                var enemyHealth = enemy.gameObject.GetComponent<EnemyHealth>();
+                enemyHealth.currHealth -= 25;
+
+
+            }
         }
+        
     }
 }

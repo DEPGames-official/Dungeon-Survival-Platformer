@@ -24,7 +24,7 @@ public class ProjectileBehaviour : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             var playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
-            playerHealth.health -= 25;
+            playerHealth.currHealth -= 25;
             Destroy(gameObject);
         }
         else
