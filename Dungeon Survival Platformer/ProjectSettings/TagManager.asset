@@ -9,6 +9,9 @@ TagManager:
   - GrumpisSpider
   - ToxicSpiderBoss
   - ToxicSpiderBossOrb
+  - GrumpisSpiderBossRoom
+  - RubySpiderBossRoom
+  - CobaltSpiderBossRoom
   layers:
   - Default
   - TransparentFX

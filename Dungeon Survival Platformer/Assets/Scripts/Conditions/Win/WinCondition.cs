@@ -9,13 +9,11 @@ public class WinCondition : MonoBehaviour
 
     [SerializeField]
     GameObject WinMenu;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
+    //Doing this because the pause feature doesn't work properly for some reason when clicking "Restart button" and don't have much time at this point
+    [SerializeField]
+    List<string> enemyTagsToFreeze;
+    
     void Update()
     {
         for (int i = 0; i < enemyTags.Count; i++)
@@ -27,7 +25,18 @@ public class WinCondition : MonoBehaviour
             }
             else
             {
-                WinMenu.SetActive(true);
+                
+                for (int k = 0; k < enemyTagsToFreeze.Count; k++)
+                {
+                    var enemiesToFreeze = GameObject.FindGameObjectsWithTag(enemyTagsToFreeze[k]);
+                    
+                    foreach(GameObject enemyObjects in enemiesToFreeze)
+                    {
+                        enemyObjects.SetActive(false);
+                    }
+                }
+
+                    WinMenu.SetActive(true);
             }
         }
     }
