@@ -27,6 +27,10 @@ public class SpiderController : MonoBehaviour
     enum MovementState { idle_top, attack_top, walking_top, dying_top }
     MovementState state;
 
+    [SerializeField]
+    float playerDistanceMin = 2;
+    float playerDistance;
+
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -61,16 +65,26 @@ public class SpiderController : MonoBehaviour
 
         state = MovementState.idle_top;
         shootTimer -= Time.deltaTime;
-        while (shootTimer <= 0)
+        if (DistanceOfPlayer() < playerDistanceMin)
         {
-            state = MovementState.attack_top;
-            Instantiate(projectilePrefab, launchOffset.position, transform.rotation);
-            shootTimer = shootTimerBackup;
+            while (shootTimer <= 0)
+            {
+                state = MovementState.attack_top;
+                Instantiate(projectilePrefab, launchOffset.position, transform.rotation);
+                shootTimer = shootTimerBackup;
+            }
         }
+        
     }
     void UpdateAnimationState()
     {
         
         anim.SetInteger("state", (int)state);
+    }
+
+    float DistanceOfPlayer()
+    {
+        playerDistance = Vector3.Distance(player.transform.position, transform.position);
+        return playerDistance;
     }
 }
