@@ -33,7 +33,7 @@ public class PlayerHealth : MonoBehaviour
     }
     public void ReloadMainLevel()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("MainLevel");
         
     }
 }

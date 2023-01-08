@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = System.Random;
 
 public class PlayerController : MonoBehaviour
 {
@@ -30,7 +32,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     LayerMask spiderLayers;
 
-    
+    public AudioClip attackSound_one, attackSound_two, jumpSound;
+    [SerializeField]
+    AudioSource audioSource;
+
+    Random random = new Random();
 
     private void Start()
     {
@@ -51,6 +57,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
+            PlayAudioSource(jumpSound);
             rb.velocity = new Vector2(0f, jumpHeight);
         }
         UpdateAnimationState();
@@ -100,6 +107,20 @@ public class PlayerController : MonoBehaviour
     {
         if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
         {
+            int randomAttack = random.Next(0, 2);
+
+            switch (randomAttack)
+            {
+                case 0:
+                    PlayAudioSource(attackSound_one);
+                    break;
+                case 1:
+                    PlayAudioSource(attackSound_two);
+                    break;
+            }
+
+            
+
             state = MovementState.attacking;
             Collider2D[] hitSpiders = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, spiderLayers);
 
@@ -112,5 +133,10 @@ public class PlayerController : MonoBehaviour
             }
         }
         
+    }
+
+    void PlayAudioSource(AudioClip audioClip)
+    {
+        audioSource.PlayOneShot(audioClip);
     }
 }
