@@ -17,6 +17,9 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField]
     Slider healthBar;
 
+    [SerializeField]
+    PlayerHealth player;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +45,7 @@ public class EnemyHealth : MonoBehaviour
             updateHealth();
             if (currHealth <= 0)
             {
+                player.currHealth += 25;
                 healthBar.GameObject().SetActive(false);
                 gameObject.SetActive(false);
             }

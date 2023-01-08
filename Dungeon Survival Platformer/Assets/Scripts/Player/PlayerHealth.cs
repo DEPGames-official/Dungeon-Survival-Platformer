@@ -24,12 +24,16 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        healthBar.value = currHealth;
+        if (currHealth >= maxHealth)
+        {
+            currHealth = maxHealth;
+        }
 
         if (currHealth <= 0)
         {
             ReloadMainLevel();
-        }       
+        }
+        healthBar.value = currHealth;
     }
     public void ReloadMainLevel()
     {
