@@ -111332,21 +111332,11 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 65, y: 5, z: 0}
+  - first: {x: 66, y: 5, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 45
       m_TileSpriteIndex: 45
-      m_TileMatrixIndex: 7
-      m_TileColorIndex: 20
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: 66, y: 5, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 49
-      m_TileSpriteIndex: 49
       m_TileMatrixIndex: 7
       m_TileColorIndex: 20
       m_TileObjectToInstantiateIndex: 65535
@@ -125172,7 +125162,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 82c63709aff0bc744934e77e34086b56, type: 2}
   - m_RefCount: 6
     m_Data: {fileID: 11400000, guid: 3988d21b059a82b4084622abca7465ae, type: 2}
-  - m_RefCount: 8
+  - m_RefCount: 7
     m_Data: {fileID: 11400000, guid: 356c94d794a4d8343b2b14e0fe0951e0, type: 2}
   - m_RefCount: 8
     m_Data: {fileID: 11400000, guid: ea140d6c1ded8154fb51e766c61f2d28, type: 2}
@@ -125375,7 +125365,7 @@ Tilemap:
     m_Data: {fileID: 21300238, guid: e3b50334692f8f544b001d8a0536b61a, type: 3}
   - m_RefCount: 6
     m_Data: {fileID: 21300686, guid: c8ec4d8b444a24f4ba2889543ef0f232, type: 3}
-  - m_RefCount: 8
+  - m_RefCount: 7
     m_Data: {fileID: 21300176, guid: e3b50334692f8f544b001d8a0536b61a, type: 3}
   - m_RefCount: 8
     m_Data: {fileID: 21300178, guid: e3b50334692f8f544b001d8a0536b61a, type: 3}
@@ -125598,7 +125588,7 @@ Tilemap:
       e31: 0
       e32: 4.5904e-41
       e33: 0
-  - m_RefCount: 1544
+  - m_RefCount: 1543
     m_Data:
       e00: 1
       e01: 0
@@ -125657,7 +125647,7 @@ Tilemap:
     m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
   - m_RefCount: 0
     m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
-  - m_RefCount: 1544
+  - m_RefCount: 1543
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -128365,9 +128355,9 @@ CompositeCollider2D:
         Y: 70000000
       - X: 690000000
         Y: 60000000
-      - X: 650000000
+      - X: 660000000
         Y: 60000000
-      - X: 650000000
+      - X: 660000000
         Y: 50000000
       - X: 690000000
         Y: 50000000
@@ -129979,8 +129969,8 @@ CompositeCollider2D:
       - {x: 75.99997, y: 7}
       - {x: 69, y: 6.9999704}
       - {x: 68.99997, y: 6}
-      - {x: 65, y: 5.999971}
-      - {x: 65.00003, y: 5}
+      - {x: 66, y: 5.999971}
+      - {x: 66.00003, y: 5}
       - {x: 69, y: 4.9999704}
       - {x: 68.99997, y: 1}
       - {x: 65, y: 0.99997073}
@@ -130477,7 +130467,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1215748088}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 170.42, y: 70.8, z: 0.12275699}
+  m_LocalPosition: {x: 55.1, y: 12.9, z: 0.12275699}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
