@@ -14,15 +14,22 @@ public class EnemyCheck : MonoBehaviour
     {
         for (int i = 0; i < enemyTags.Count; i++)
         {
+
             var enemyCondition = GameObject.FindGameObjectsWithTag(enemyTags[i]);
-            if (enemyCondition.Length != 0)
+
+            if (enemyCondition.Length == 0)
             {
-                break;
+                enemyTags.Remove(enemyTags[i]);
             }
-            else
+  
+            if (enemyTags.Count == 0)
             {
                 door.SetActive(false);
             }
+
+
+            
         }
+        
     }
 }
