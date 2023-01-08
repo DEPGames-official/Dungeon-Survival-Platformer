@@ -1,2 +1,2 @@
 # Dungeon Survival
- A 2D platformer game that is in a castle and you have to survive and fight  off spiders. The goal is to reach the end
+ A 2D platformer game that is in a castle and you have to survive and fight  off spiders. The goal is to reach the end and to not get annoyed...
