@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8044864700995955823}
   - component: {fileID: 8044864700995955822}
   - component: {fileID: 8044864700995955817}
-  - component: {fileID: -2709041012676647839}
+  - component: {fileID: -6505913503853925973}
   m_Layer: 7
   m_Name: normal_squareweb
   m_TagString: Untagged
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
---- !u!114 &-2709041012676647839
+--- !u!114 &-6505913503853925973
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,4 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 180e76504bb557b45a0749696abff28a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
+  currHealth: 25
+  maxHealth: 25
+  hasHealthBar: 0
+  healthBar: {fileID: 0}

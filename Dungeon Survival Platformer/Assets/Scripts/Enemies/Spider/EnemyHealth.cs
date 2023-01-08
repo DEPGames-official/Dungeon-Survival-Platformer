@@ -1,12 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
+    [HideInInspector]
     public float currHealth = 25;
     public float maxHealth = 25;
+
+    [SerializeField]
+    bool hasHealthBar;
+
 
     [SerializeField]
     Slider healthBar;
@@ -16,18 +22,36 @@ public class EnemyHealth : MonoBehaviour
     {
         currHealth = maxHealth;
 
-        healthBar.maxValue = maxHealth;
-        healthBar.value = maxHealth;
+        if (hasHealthBar == true)
+        {
+            healthBar.maxValue = maxHealth;
+            healthBar.value = maxHealth;
+        }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        healthBar.value = currHealth;
-
-        if (currHealth <= 0)
+        if (hasHealthBar == false && currHealth <= 0)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
+        else if (hasHealthBar == true)
+        {
+            updateHealth();
+            if (currHealth <= 0)
+            {
+                healthBar.GameObject().SetActive(false);
+                gameObject.SetActive(false);
+            }
+            
+            
+        }
+    }
+
+    void updateHealth()
+    {
+        healthBar.value = currHealth;
     }
 }

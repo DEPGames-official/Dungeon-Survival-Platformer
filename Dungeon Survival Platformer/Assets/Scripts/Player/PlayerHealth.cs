@@ -29,7 +29,7 @@ public class PlayerHealth : MonoBehaviour
         if (currHealth <= 0)
         {
             ReloadMainLevel();
-        }
+        }       
     }
     public void ReloadMainLevel()
     {

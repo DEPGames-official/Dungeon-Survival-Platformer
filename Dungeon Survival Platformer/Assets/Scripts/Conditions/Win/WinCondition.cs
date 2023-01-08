@@ -13,7 +13,8 @@ public class WinCondition : MonoBehaviour
     //Doing this because the pause feature doesn't work properly for some reason when clicking "Restart button" and don't have much time at this point
     [SerializeField]
     List<string> enemyTagsToFreeze;
-    
+    GameObject[] enemiesToFreeze;
+
     void Update()
     {
         for (int i = 0; i < enemyTags.Count; i++)
@@ -28,7 +29,11 @@ public class WinCondition : MonoBehaviour
                 
                 for (int k = 0; k < enemyTagsToFreeze.Count; k++)
                 {
-                    var enemiesToFreeze = GameObject.FindGameObjectsWithTag(enemyTagsToFreeze[k]);
+                    
+                    if (enemyTagsToFreeze[k] != null)
+                    {
+                        enemiesToFreeze = GameObject.FindGameObjectsWithTag(enemyTagsToFreeze[k]);
+                    }
                     
                     foreach(GameObject enemyObjects in enemiesToFreeze)
                     {

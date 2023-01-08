@@ -5,13 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - RubySpider
-  - CobaltSpider
   - GrumpisSpider
   - ToxicSpiderBoss
   - ToxicSpiderBossOrb
   - GrumpisSpiderBossRoom
   - RubySpiderBossRoom
-  - CobaltSpiderBossRoom
+  - CoboltSpiderBossRoom
+  - CoboltSpider
   layers:
   - Default
   - TransparentFX
